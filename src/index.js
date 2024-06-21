@@ -11,7 +11,7 @@ app.use(cors()); //usar cors
 
 //Retorna o paciente com base no código do paciente digitado na home
 app.get('/pacientes', async (req, res) => {
-  //Adicionando o id da busca
+  //Adicionando o nome da busca
   const { nome } = req.query;
   
   //Consulta apurada com o Where, passando o Id
