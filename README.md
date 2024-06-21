@@ -8,3 +8,5 @@
 5. Para testar você pode abrir o link localhost:3535 na web e buscar por "localhost:3535/media" e se aparecer alguns dados, está conectado com o banco que está na nuvem.
 
 Lembrando que para rodar junto com o FrontEnd é necessário que os dois estejam rodando com seus devidos comandos.
+
+Para atualizar o projeto em sua máquina, caso tenha feito o clone, basta dar um git pull, e receber todas as mudanças. Caso esteja usando o download em zip, você deverá fazer o download novamente.
