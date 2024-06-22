@@ -33,15 +33,15 @@ app.get('/pacientes', async (req, res) => {
 //Cadastrar novo paciente
 app.post('/addpaciente', async (req, res) => {
   try {
-    const { nome, cpf, sexo, idade, cod_paciente } = req.body; 
+    const { nome, cpf, sexo, idade } = req.body; 
     
     // Verifica se todos os campos necessários estão presentes
-    if (!nome || !cpf || !sexo || !idade || !cod_paciente) {
-      return res.status(400).json({ message: 'Por favor, forneça nome, cpf, sexo e idade do paciente.' });
+    if (!nome || !cpf || !sexo || !idade ) {
+      return res.status(400).json({ message: 'Por favor, preencha todos os campos.' });
     }
     
-    const q = 'INSERT INTO Paciente (nome, cpf, sexo, idade, cod_paciente) VALUES ($1, $2, $3, $4, $5)';
-    const values = [nome, cpf, sexo, idade, cod_paciente];
+    const q = 'INSERT INTO Paciente (nome, cpf, sexo, idade) VALUES ($1, $2, $3, $4)';
+    const values = [nome, cpf, sexo, idade];
     
     // Insere o paciente no banco de dados e retorna o paciente inserido
     const result = await db.query(q, values);
@@ -52,6 +52,7 @@ app.post('/addpaciente', async (req, res) => {
     res.status(500).json({ message: 'Erro ao cadastrar paciente.', err});
   }
 });
+
 
 //Mostra os dados da tabela da arcada_dentaria
 app.get('/dentes', async (req, res) => {
