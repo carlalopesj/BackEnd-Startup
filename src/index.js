@@ -128,6 +128,6 @@ app.get('/media', async (req, res) => {
 
 
 // Iniciar o servidor
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor rodando em http://0.0.0.0:${port}`);
 });
